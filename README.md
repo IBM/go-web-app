@@ -1,77 +1,64 @@
-## gowebapp
+<p align="center">
+    <a href="http://kitura.io/">
+        <img src="https://landscape.cncf.io/logos/ibm-cloud.svg" height="100" alt="IBM Cloud">
+    </a>
+</p>
 
-[![](https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg)](https://bluemix.net)
-![Platform](https://img.shields.io/badge/platform-go-lightgrey.svg?style=flat)
 
-## Table of Contents
+<p align="center">
+    <a href="https://cloud.ibm.com">
+    <img src="https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg" alt="IBM Cloud">
+    </a>
+    <img src="https://img.shields.io/badge/platform-go-lightgrey.svg?style=flat" alt="platform">
+    <img src="https://img.shields.io/badge/license-Apache2-blue.svg?style=flat" alt="Apache 2">
+</p>
 
-* [Summary](#summary)
-* [Requirements](#requirements)
-* [Configuration](#configuration)
-* [Run](#run)
 
-<a name="summary"></a>
-## Summary
+# Create and deploy a basic Go Gin application
 
-The Web basic starter contains an opinionated set of files for web serving:
+> We have similar applications available for [Node.js](https://github.com/IBM/nodejs-starter), [Java Spring](https://github.com/IBM/spring-starter), [Swift](https://github.com/IBM/swift-starter), [Python Flask](https://github.com/IBM/flask-starter), and [Java Liberty](https://github.com/IBM/java-liberty-starter).
+
+In this sample web application, you will create a web application using Gin to serve web pages in Go, complete with standard best practices, including a health check and application metric monitoring.
+
+This app contains an opinionated set of files for web serving:
 
 - `public/index.html`
 - `public/404.html`
 - `public/500.html`
 
+## Steps
+
+You can [deploy this application to IBM Cloud](https://cloud.ibm.com/developer/appservice/create-app?navMode=starterkits) or [build it locally](#building-locally) by cloning this repo first.  Once your app is live, you can access the `/health` endpoint to build out your cloud native application.
+
+### Deploying to IBM Cloud
+
+<p align="center">
+    <a href="https://cloud.ibm.com/developer/appservice/create-app?navMode=starterkits">
+    <img src="https://cloud.ibm.com/devops/setup/deploy/button_x2.png" alt="Deploy to IBM Cloud">
+    </a>
+</p>
+
+Use the button above to deploy this same application to IBM Cloud.  This option will create a deployment pipeline, complete with a hosted Git lab project and devops toolchain.  You will have the option of deploying to either CloudFoundry or a Kubernetes cluster. [IBM Cloud DevOps](https://www.ibm.com/cloud-computing/bluemix/devops) services provides toolchains as a set of tool integrations that support development, deployment, and operations tasks inside IBM Cloud. 
+
+
+### Building Locally
+
+To get started building this web application locally, you can either run the application natively or use the IBM Cloud Developer Tools for containerization and easy deployment to IBM Cloud.
 
 All of your `dep` dependencies are stored inside of `Gopkg.toml`.
 
-## Requirements
-#### Local Development Setup (optional)
+#### Native Application Development
 
 - Install [Go](https://golang.org/dl/)
 - Install [dep](https://github.com/golang/dep)
 
-### IBM Cloud Developer Tools (optional)
+In order for Go applications to run locally, they must be placed in the correct file path. The application must exist in `$GOPATH/src/gostarter`
 
-[IBM Cloud Developer Tools](https://cloud.ibm.com/docs/cli/index.html#overview) simplifies the building, running, and deployment of your application from you local environment to the cloud in containerized environments.
-
-1. Install [IBM Cloud Developer Tools](https://cloud.ibm.com/docs/cli/index.html#step1) on your machine  
-2. Install the dev plugin: `ibmcloud plugin install dev`
-
-#### cli-config.yml
-
-The `cli-config.yml` contains the commands that are used by IBM Cloud Developer Tools.  If needed, you can update these to reflect how you want to run your project:
-* `test-cmd`: The command to execute tests for the code in the tools container (i.e. `go test ./...`)
-
-* `build-cmd-debug`: The command to build the code and docker image for `DEBUG` mode (i.e. `go build` to ensure that the application compiles cleanly)
-
-* `debug-cmd`: The command to execute debug of the code in the tools container using [delve](https://github.com/derekparker/delve) (i.e. `dlv debug --headless --listen=0.0.0.0:8181`)
-
-### IBM Cloud DevOps (optional)
-
-[![Create Toolchain](https://cloud.ibm.com/devops/graphics/create_toolchain_button.png)](https://cloud.ibm.com/devops/setup/deploy/)
-
-[IBM Cloud DevOps](https://cloud.ibm.com/devops/getting-started) services provides toolchains as a set of tool integrations that support development, deployment, and operations tasks inside IBM Cloud. The **Create Toolchain** button creates a DevOps toolchain and acts as a single-click deploy to IBM Cloud including provisioning all required services.
-
-## Run
-
-#### Configuration
-
-This project contains IBM Cloud specific files that are used to deploy the application as part of an IBM Cloud DevOps flow. The `.bluemix` directory contains files used to define the IBM Cloud toolchain and pipeline for your application.
-
-Credentials are either taken from the VCAP_SERVICES or Kubernetes environment variablea if in IBM Cloud, or from a config file if running locally or on VSIs.
-
-More information about configuration best practices and abstraction of environments can be found in the IBM Cloud [Go Programming Guide](https://cloud.ibm.com/docs/go/configuration.html#configuration).
-
-### Using IBM Cloud Developer Tools
-
- IBM Cloud Developer Tools makes it easy to compile and run your application if you do not have all of the tools installed on your computer yet. Your application will be compiled with Docker containers. To compile and run your app, run:
+Once the Go toolchain has been installed, you can compile a Go project with:
 
 ```bash
-ibmcloud dev build
-ibmcloud dev run
+go install
 ```
-
-### Using your local environment
-
-In order for Go applications to run locally, they must be placed in the correct file path. The application must exist in `$GOPATH/src/gowebapp`
 
 To run your application locally:
 
@@ -80,16 +67,39 @@ dep ensure
 go run server.go
 ```
 
-Once the Go toolchain has been installed, you can compile a Go project with:
+Your sources will be compiled to your `$GOPATH/bin` directory. Your application will be running at `http://localhost:8080`.
+
+#### IBM Cloud Developer Tools
+
+Install [IBM Cloud Developer Tools](https://cloud.ibm.com/docs/cli/index.html#overview) on your machine by using the following installation command: `curl -sL https://ibm.biz/idt-installer | bash`.
+
+Your application will be compiled with Docker containers. To compile and run your app, run:
 
 ```bash
-go install
+ibmcloud dev build
+ibmcloud dev run
 ```
 
-Your sources will be compiled to your `$GOPATH/bin` directory.
+This will launch your application locally.  When you are ready to deploy to IBM Cloud on CloudFoundry or Kubernetes, run one of the commands below:
 
-### Application Endpoints
+```bash
+ibmcloud dev deploy -t buildpack
+ibmcloud dev deploy -t container
+```
 
-Your application is running at: `http://localhost:8080` in your browser.
+You can build and debug your app locally with:
 
-- Health endpoint: `/health`
+```bash
+ibmcloud dev build --debug
+ibmcloud dev debug
+```
+
+## Next Steps
+* Learn more about augmenting your Go applications on IBM Cloud with the [Go Programming Guide](https://cloud.ibm.com/docs/go).
+* Explore other [sample applications](https://cloud.ibm.com/developer/appservice/starter-kits) on IBM Cloud.
+
+## License
+
+This sample application is licensed under the Apache License, Version 2. Separate third-party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1](https://developercertificate.org/) and the [Apache License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
+
+[Apache License FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
