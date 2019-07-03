@@ -72,7 +72,10 @@ Your sources will be compiled to your `$GOPATH/bin` directory. Your application 
 
 #### IBM Cloud Developer Tools
 
-Install [IBM Cloud Developer Tools](https://cloud.ibm.com/docs/cli/index.html#overview) on your machine by using the following installation command: `curl -sL https://ibm.biz/idt-installer | bash`.
+Install [IBM Cloud Developer Tools](https://cloud.ibm.com/docs/cli/index.html#overview) on your machine by running the following command:
+```
+curl -sL https://ibm.biz/idt-installer | bash
+```
 
 Your application will be compiled with Docker containers. To compile and run your app, run:
 
@@ -81,7 +84,7 @@ ibmcloud dev build
 ibmcloud dev run
 ```
 
-This will launch your application locally. When you are ready to deploy to IBM Cloud on Cloud Foundry or Kubernetes, run one of the commands below:
+This will launch your application locally. When you are ready to deploy to IBM Cloud on Cloud Foundry or Kubernetes, run one of the following commands:
 
 ```bash
 ibmcloud dev deploy -t buildpack
