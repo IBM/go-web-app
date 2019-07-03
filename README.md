@@ -28,7 +28,7 @@ This app contains an opinionated set of files for web serving:
 
 ## Steps
 
-You can [deploy this application to IBM Cloud](https://cloud.ibm.com/developer/appservice/starter-kits/68fb7fbd-13de-3e22-854f-1dfe50f9101e/go-web-app-with-gin) or [build it locally](#building-locally) by cloning this repo first.  Once your app is live, you can access the `/health` endpoint to build out your cloud native application.
+You can [deploy this application to IBM Cloud](https://cloud.ibm.com/developer/appservice/starter-kits/68fb7fbd-13de-3e22-854f-1dfe50f9101e/go-web-app-with-gin) or [build it locally](#building-locally) by cloning this repo first. Once your app is live, you can access the `/health` endpoint to build out your cloud native application.
 
 ### Deploying to IBM Cloud
 
@@ -38,12 +38,12 @@ You can [deploy this application to IBM Cloud](https://cloud.ibm.com/developer/a
     </a>
 </p>
 
-Use the button above to deploy this same application to IBM Cloud.  This option will create a deployment pipeline, complete with a hosted Git lab project and devops toolchain.  You will have the option of deploying to either CloudFoundry or a Kubernetes cluster. [IBM Cloud DevOps](https://www.ibm.com/cloud-computing/bluemix/devops) services provides toolchains as a set of tool integrations that support development, deployment, and operations tasks inside IBM Cloud. 
+Use the button above to deploy this same application to IBM Cloud. This option will create a deployment pipeline, complete with a hosted Git lab project and DevOps toolchain. You will have the option of deploying to either Cloud Foundry or a Kubernetes cluster. [IBM Cloud DevOps](https://www.ibm.com/cloud/devops) services provides toolchains as a set of tool integrations that support development, deployment, and operations tasks inside IBM Cloud. 
 
 
 ### Building Locally
 
-To get started building this web application locally, you can either run the application natively or use the IBM Cloud Developer Tools for containerization and easy deployment to IBM Cloud.
+To get started building this web application locally, you can either run the application natively or use the [IBM Cloud Developer Tools](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started) for containerization and easy deployment to IBM Cloud.
 
 All of your `dep` dependencies are stored inside of `Gopkg.toml`.
 
@@ -52,16 +52,17 @@ All of your `dep` dependencies are stored inside of `Gopkg.toml`.
 - Install [Go](https://golang.org/dl/)
 - Install [dep](https://github.com/golang/dep)
 
-In order for Go applications to run locally, they must be placed in the correct file path. The application must exist in `$GOPATH/src/gostarter`
+In order for Go applications to run locally, they must be placed in the following path:
+```
+$GOPATH/src/gostarter
+```
 
 Once the Go toolchain has been installed, you can compile a Go project with:
-
 ```bash
 go install
 ```
 
 To run your application locally:
-
 ```bash
 dep ensure
 go run server.go
@@ -80,7 +81,7 @@ ibmcloud dev build
 ibmcloud dev run
 ```
 
-This will launch your application locally.  When you are ready to deploy to IBM Cloud on CloudFoundry or Kubernetes, run one of the commands below:
+This will launch your application locally. When you are ready to deploy to IBM Cloud on Cloud Foundry or Kubernetes, run one of the commands below:
 
 ```bash
 ibmcloud dev deploy -t buildpack
@@ -95,7 +96,7 @@ ibmcloud dev debug
 ```
 
 ## Next Steps
-* Learn more about augmenting your Go applications on IBM Cloud with the [Go Programming Guide](https://cloud.ibm.com/docs/go).
+* Learn more about augmenting your Go applications on IBM Cloud with the [Go Programming Guide](https://cloud.ibm.com/docs/go?topic=go-getting-started).
 * Explore other [sample applications](https://cloud.ibm.com/developer/appservice/starter-kits) on IBM Cloud.
 
 ## License
