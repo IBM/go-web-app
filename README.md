@@ -52,7 +52,7 @@ All of your `dep` dependencies are stored inside of `Gopkg.toml`.
 - Install [Go](https://golang.org/dl/)
 - Install [dep](https://github.com/golang/dep)
 
-In order for Go applications to run locally, they project contents must be placed in the following path:
+In order for Go applications to run locally, the project contents must be placed in the following path:
 ```
 $GOPATH/src/gowebapp
 ```
