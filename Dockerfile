@@ -4,7 +4,8 @@ FROM golang:1.10.3-alpine
 RUN apk update && apk add --no-cache bash git
 
 # Change working directory
-WORKDIR $GOPATH/src/gowebapp/
+# Replace 'go-web-app' with the name of your app if you created from 'bx dev create'
+WORKDIR $GOPATH/src/go-web-app/
 
 # Install dependencies
 RUN go get -u github.com/golang/dep/...

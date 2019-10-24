@@ -52,10 +52,16 @@ All of your `dep` dependencies are stored inside of `Gopkg.toml`.
 - Install [Go](https://golang.org/dl/)
 - Install [dep](https://github.com/golang/dep)
 
-In order for Go applications to run locally, the project contents must be placed in the following path:
+If you used Git Clone: for this Go app to run locally, the project must be cloned in the following path:
 ```
-$GOPATH/src/gowebapp
+$GOPATH/src/
 ```
+
+If you created this app from the IBM Cloud CLI with `ibmcloud dev create` you need to do the following to perform Native App Development:
+1. In `server.go` replace 'go-web-app' in the import statements with the name you gave your app (it's the name of this README.md parent directory)
+2. In the `Dockerfile` and `Dockerfile-tools` replace 'go-web-app' with the name of this app.
+3. In the `manifest.yml` replace 'go-web-app' in `name: go-web-app` and `GOPACKAGENAME : go-web-app` with the name of this app.
+
 
 Import dependencies from Gopkg.toml using dep:
 ```bash

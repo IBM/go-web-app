@@ -1,8 +1,9 @@
 package main
 
 import (
-	"gowebapp/routers"
-	"gowebapp/plugins"
+	// Replace 'go-web-app' with the name of your app if you created from 'bx dev create'
+	"go-web-app/routers"
+	"go-web-app/plugins"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-contrib/static"
 	"github.com/prometheus/client_golang/prometheus"
