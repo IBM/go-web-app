@@ -1,12 +1,13 @@
 package main
 
 import (
-	"gowebapp/routers"
+	routers "github.com/IBM/go-web-app/routers"
 	// "gowebapp/plugins" if you create your own plugins import them here
-	"github.com/gin-gonic/gin"
-	"github.com/gin-contrib/static"
-	log "github.com/sirupsen/logrus"
 	"os"
+
+	"github.com/gin-contrib/static"
+	"github.com/gin-gonic/gin"
+	log "github.com/sirupsen/logrus"
 )
 
 func port() string {
