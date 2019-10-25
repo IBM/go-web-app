@@ -3,7 +3,7 @@ applications:
 - instances: 1
   timeout: 180
   name: gowebapp
-  buildpack: https://github.com/cloudfoundry/go-buildpack.git#v1.8.25
+  buildpack: https://github.com/cloudfoundry/go-buildpack.git#v1.9.2
   memory: 256M
   domain: not-used.net
   host: not-used
