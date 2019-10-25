@@ -4,7 +4,6 @@
     </a>
 </p>
 
-
 <p align="center">
     <a href="https://cloud.ibm.com">
     <img src="https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg" alt="IBM Cloud">
@@ -13,8 +12,8 @@
     <img src="https://img.shields.io/badge/license-Apache2-blue.svg?style=flat" alt="Apache 2">
 </p>
 
-
 # Create and deploy a Go Web Application using Gin
+[![Go Report Card](https://goreportcard.com/badge/github.com/alessiosavi/go-web-app)](https://goreportcard.com/report/github.com/alessiosavi/go-web-app) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/0e3ca10e3066494f9517cd93a7a5d1a5)](https://www.codacy.com/manual/alessiosavi/go-web-app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=alessiosavi/go-web-app&amp;utm_campaign=Badge_Grade) [![GoDoc](https://godoc.org/github.com/IBM/go-web-app?status.svg)](https://godoc.org/github.com/IBM/go-web-app)
 
 > We have similar applications available for [Node.js](https://github.com/IBM/nodejs-web-app), [Java Spring](https://github.com/IBM/spring-web-app), [Swift](https://github.com/IBM/swift-web-app), Python [Django](https://github.com/IBM/django-web-app) and [Flask](https://github.com/IBM/flask-web-app), and [Java Liberty](https://github.com/IBM/java-liberty-web-app).
 
