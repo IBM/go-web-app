@@ -24,11 +24,6 @@
 #   go-tests = true
 #   unused-packages = true
 
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/afex/hystrix-go"
-
 [[constraint]]
   branch = "master"
   name = "github.com/gin-contrib/static"
@@ -36,11 +31,7 @@
 [[constraint]]
   name = "github.com/gin-gonic/gin"
   version = "1.2.0"
-
-[[constraint]]
-  name = "github.com/prometheus/client_golang"
-  version = "0.8.0"
-
+  
 [[constraint]]
   name = "github.com/sirupsen/logrus"
   version = "1.0.5"

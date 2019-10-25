@@ -18,7 +18,7 @@
 
 > We have similar applications available for [Node.js](https://github.com/IBM/nodejs-web-app), [Java Spring](https://github.com/IBM/spring-web-app), [Swift](https://github.com/IBM/swift-web-app), Python [Django](https://github.com/IBM/django-web-app) and [Flask](https://github.com/IBM/flask-web-app), and [Java Liberty](https://github.com/IBM/java-liberty-web-app).
 
-In this sample web application, you will create a web application using Gin to serve web pages in Go, complete with standard best practices, including a health check and application metric monitoring.
+In this sample web application, you will create a web application using Gin to serve web pages in Go, complete with standard best practices, including a health check.
 
 This app contains an opinionated set of files for web serving:
 
