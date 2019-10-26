@@ -48,7 +48,7 @@ func main() {
 	}
 }
 
-// VerifyCommandLineInput is delegated to manage the inputer parameter provide with the input flag from command line
+// verifyCommandLineInput is delegated to manage the inputer parameter provide with the input flag from command line
 func verifyCommandLineInput() *datastructure.Configuration {
 	log.Debug("VerifyCommandLineInput | START")
 	// This folder contains the two folder related to the CODE and the DOC
@@ -71,27 +71,26 @@ func verifyCommandLineInput() *datastructure.Configuration {
 	if stringutils.IsBlank(*host) {
 		*host = "localhost" // If no host provided set localhost
 		log.Error("VerifyCommandLineInput | Use '-host localhost' for bind the service to 127.0.0.1 | Binded @" + *host)
-
 	}
 	log.Info("Port: ", *port, " | Host: ", *host, " | LogLevel: ", logLevel)
 	log.Debug("VerifyCommandLineInput | STOP")
-
 	return &datastructure.Configuration{Port: *port, Host: *host, LogLevel: setDebugLevel(*logLevel)}
 }
 
-// SetDebugLevel return the LogRus object by the given string
+// setDebugLevel return the Logrus log level object by the given string
 func setDebugLevel(level string) log.Level {
-	if strings.Compare(strings.ToLower(level), "debug") == 0 {
+	switch strings.ToLower(level) {
+	case "debug":
 		return log.DebugLevel
-	} else if strings.Compare(strings.ToLower(level), "info") == 0 {
+	case "info":
 		return log.InfoLevel
-	} else if strings.Compare(strings.ToLower(level), "error") == 0 {
+	case "error":
 		return log.ErrorLevel
-	} else if strings.Compare(strings.ToLower(level), "fatal") == 0 {
+	case "fatal":
 		return log.FatalLevel
-	} else if strings.Compare(strings.ToLower(level), "panic") == 0 {
+	case "panic":
 		return log.PanicLevel
-	} else if strings.Contains(strings.ToLower(level), "warn") {
+	case "warn", "warning":
 		return log.WarnLevel
 	}
 	return log.DebugLevel

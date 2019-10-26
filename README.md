@@ -13,7 +13,9 @@
 </p>
 
 # Create and deploy a Go Web Application using Gin
-[![Go Report Card](https://goreportcard.com/badge/github.com/alessiosavi/go-web-app)](https://goreportcard.com/report/github.com/alessiosavi/go-web-app) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/0e3ca10e3066494f9517cd93a7a5d1a5)](https://www.codacy.com/manual/alessiosavi/go-web-app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=alessiosavi/go-web-app&amp;utm_campaign=Badge_Grade) [![GoDoc](https://godoc.org/github.com/IBM/go-web-app?status.svg)](https://godoc.org/github.com/IBM/go-web-app)
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/alessiosavi/go-web-app)](https://goreportcard.com/report/github.com/alessiosavi/go-web-app) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/0e3ca10e3066494f9517cd93a7a5d1a5)](https://www.codacy.com/manual/alessiosavi/go-web-app?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=alessiosavi/go-web-app&amp;utm_campaign=Badge_Grade) [![GoDoc](https://godoc.org/github.com/IBM/go-web-app?status.svg)](https://godoc.org/github.com/IBM/go-web-app) [![License](https://img.shields.io/github/license/IBM/go-web-app)](https://img.shields.io/github/license/IBM/go-web-app) [![Code size](https://img.shields.io/github/languages/code-size/IBM/go-web-app)](https://img.shields.io/github/languages/code-size/IBM/go-web-app) [![Repo size](https://img.shields.io/github/repo-size/IBM/go-web-app)](https://img.shields.io/github/repo-size/IBM/go-web-app) [![Issue open](https://img.shields.io/github/issues/IBM/go-web-app)](https://img.shields.io/github/issues/IBM/go-web-app)
+[![Issue closed](https://img.shields.io/github/issues-closed/IBM/go-web-app)](https://img.shields.io/github/issues-closed/IBM/go-web-app)
 
 > We have similar applications available for [Node.js](https://github.com/IBM/nodejs-web-app), [Java Spring](https://github.com/IBM/spring-web-app), [Swift](https://github.com/IBM/swift-web-app), Python [Django](https://github.com/IBM/django-web-app) and [Flask](https://github.com/IBM/flask-web-app), and [Java Liberty](https://github.com/IBM/java-liberty-web-app).
 
@@ -37,8 +39,7 @@ You can [deploy this application to IBM Cloud](https://cloud.ibm.com/developer/a
     </a>
 </p>
 
-Use the button above to deploy this same application to IBM Cloud. This option will create a deployment pipeline, complete with a hosted Git lab project and DevOps toolchain. You will have the option of deploying to either Cloud Foundry or a Kubernetes cluster. [IBM Cloud DevOps](https://www.ibm.com/cloud/devops) services provides toolchains as a set of tool integrations that support development, deployment, and operations tasks inside IBM Cloud. 
-
+Use the button above to deploy this same application to IBM Cloud. This option will create a deployment pipeline, complete with a hosted Git lab project and DevOps toolchain. You will have the option of deploying to either Cloud Foundry or a Kubernetes cluster. [IBM Cloud DevOps](https://www.ibm.com/cloud/devops) services provides toolchains as a set of tool integrations that support development, deployment, and operations tasks inside IBM Cloud.
 
 ### Building Locally
 
@@ -52,21 +53,25 @@ All of your `dep` dependencies are stored inside of `Gopkg.toml`.
 - Install [dep](https://github.com/golang/dep)
 
 In order for Go applications to run locally, the project contents must be placed in the following path:
-```
+
+```bash
 $GOPATH/src/gowebapp
 ```
 
 Import dependencies from Gopkg.toml using dep:
+
 ```bash
 dep ensure
 ```
 
 Once the dependencies have been installed, you can compile a Go project with:
+
 ```bash
 go install
 ```
 
 To run your application locally:
+
 ```bash
 go run server.go
 ```
@@ -76,7 +81,8 @@ Your sources will be compiled to your `$GOPATH/bin` directory. Your application 
 #### IBM Cloud Developer Tools
 
 Install [IBM Cloud Developer Tools](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started) on your machine by running the following command:
-```
+
+```bash
 curl -sL https://ibm.biz/idt-installer | bash
 ```
 
@@ -110,8 +116,9 @@ ibmcloud dev debug
 ```
 
 ## Next Steps
-* Learn more about augmenting your Go applications on IBM Cloud with the [Go Programming Guide](https://cloud.ibm.com/docs/go?topic=go-getting-started).
-* Explore other [sample applications](https://cloud.ibm.com/developer/appservice/starter-kits) on IBM Cloud.
+
+- Learn more about augmenting your Go applications on IBM Cloud with the [Go Programming Guide](https://cloud.ibm.com/docs/go?topic=go-getting-started).
+- Explore other [sample applications](https://cloud.ibm.com/developer/appservice/starter-kits) on IBM Cloud.
 
 ## License
 

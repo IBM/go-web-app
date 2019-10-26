@@ -1,10 +1,10 @@
 package routers
 
 import (
-	"testing"
-	"net/http/httptest"
-	"net/http"
 	"github.com/gin-gonic/gin"
+	"net/http"
+	"net/http/httptest"
+	"testing"
 )
 
 func TestHealth(t *testing.T) {
