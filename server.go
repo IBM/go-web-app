@@ -6,7 +6,6 @@ import (
 
 	datastructure "github.com/IBM/go-web-app/datastructure"
 	routers "github.com/IBM/go-web-app/routers"
-	stringutils "github.com/alessiosavi/GoGPUtils/string"
 
 	// "gowebapp/plugins" if you create your own plugins import them here
 
@@ -57,18 +56,18 @@ func verifyCommandLineInput() *datastructure.Configuration {
 	logLevel := flag.String("logLevel", "debug", "Logging level [Panic|Fatal|Error|Warn|Info|Debug|Trace]")
 	flag.Parse()
 	// Verify if the mandatory parameter are provided
-	if stringutils.IsBlank(*logLevel) {
+	if isBlank(*logLevel) {
 		//flag.PrintDefaults()
 		log.Error("Be sure to choose the right logging level! (use --logLevel info)")
 		*logLevel = "debug"
 	}
 	log.Debug("VerifyCommandLineInput | Starting command line input validation ..")
 	/* OK, now we are sure that the folder exist */
-	if stringutils.IsBlank(*port) { // TODO: If no port selected, generate select a random one from 8080 to 8090
+	if isBlank(*port) { // TODO: If no port selected, generate select a random one from 8080 to 8090
 		*port = "8080"
 		log.Error("VerifyCommandLineInput | Use '-port 8081' to bind the service on the port 8081 | Binded @" + *port)
 	}
-	if stringutils.IsBlank(*host) {
+	if isBlank(*host) {
 		*host = "localhost" // If no host provided set localhost
 		log.Error("VerifyCommandLineInput | Use '-host localhost' for bind the service to 127.0.0.1 | Binded @" + *host)
 	}
@@ -94,4 +93,19 @@ func setDebugLevel(level string) log.Level {
 		return log.WarnLevel
 	}
 	return log.DebugLevel
+}
+
+// IsBlank is delegated to verify that the does not contains only empty char
+func isBlank(str string) bool {
+	// Check length
+	if len(str) > 0 {
+		// Iterate string
+		for i := range str {
+			// Check about char different from whitespace
+			if str[i] > 32 {
+				return false
+			}
+		}
+	}
+	return true
 }
