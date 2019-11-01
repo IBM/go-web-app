@@ -19,11 +19,11 @@ import (
 func main() {
 	var conf *datastructure.Configuration
 	Formatter := new(log.TextFormatter)
-	Formatter.TimestampFormat = "15-01-2018 15:04:05.00000"
+	//Formatter.TimestampFormat = "15-01-2018 15:04:05.00000"
 	Formatter.FullTimestamp = true
 	Formatter.ForceColors = true
-	log.AddHook(filename.NewHook()) // Print filename + line at every log line
 	log.SetFormatter(Formatter)
+	log.AddHook(filename.NewHook()) // Print filename + line at every log line
 	log.SetLevel(log.DebugLevel)
 
 	conf = verifyCommandLineInput()
