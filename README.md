@@ -47,20 +47,19 @@ Click **Deploy to IBM Cloud** to deploy this same application to IBM Cloud. This
 
 To get started building this web application locally, you can either run the application natively or use the [IBM Cloud Developer Tools](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started) for containerization and easy deployment to IBM Cloud.
 
-All of your `dep` dependencies are stored inside of `Gopkg.toml`.
+All of your `go` dependencies are stored inside of `go modules`.
 
 #### Native Application Development
 
 - Install [Go](https://golang.org/dl/)
-- Install [dep](https://github.com/golang/dep)
 
 In order for Go applications to run locally, the project contents must be placed in the following path:
 
 ```bash
-$GOPATH/src/gowebapp
+cd $GOPATH/src/gowebapp
 ```
 
-Import dependencies from Gopkg.toml using dep:
+Import dependencies from go modules:
 
 ```bash
 dep ensure
