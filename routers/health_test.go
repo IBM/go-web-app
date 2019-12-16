@@ -1,9 +1,10 @@
 package routers
 
 import (
-	"testing"
-	"net/http/httptest"
 	"net/http"
+	"net/http/httptest"
+	"testing"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -19,7 +20,7 @@ func TestHealth(t *testing.T) {
 		t.Fatalf("You received a %v error.", w.Code)
 	}
 
-	expected := "{\"status\":\"UP\"}"
+	expected := `{"status":"UP"}`
 	actual := w.Body.String()
 
 	if actual != expected {
