@@ -1,4 +1,4 @@
-FROM golang:1.10.3-alpine
+FROM golang:1.13.5-alpine
 
 # Update packages and install dependency packages for services
 RUN apk update && apk add --no-cache bash git
@@ -10,10 +10,9 @@ ENV GOPATH /go
 WORKDIR $GOPATH/src/gowebapp/
 
 # Install dependencies
-RUN go get -u github.com/golang/dep/...
-RUN go get -u github.com/derekparker/delve/cmd/dlv/...
+ENV GO111MODULE on
 COPY . ./
-RUN dep ensure -v
+RUN go build ./...
 
 ENV PORT 8080
 ENV GIN_MODE release

@@ -4,8 +4,8 @@ import (
 	"flag"
 	"strings"
 
-	datastructure "gowebapp/datastructure"
-	routers "gowebapp/routers"
+	datastructure "github.com/IBM/go-web-app/datastructure"
+	routers "github.com/IBM/go-web-app/routers"
 
 	// "gowebapp/plugins" if you create your own plugins import them here
 
